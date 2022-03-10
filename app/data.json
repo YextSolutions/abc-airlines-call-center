@@ -56,6 +56,117 @@
  
   "entities": 
   {
+    "firstName": 
+    {
+      "open_set": true,
+      "values": 
+      [
+        {
+          "value": "John"
+        },
+        {
+          "value": "Bridgette"
+        },
+        {
+          "value": "James"
+        },
+        {
+          "value": "Sarah"
+        },
+        {
+          "value": "Jermaine"
+        },
+        {
+          "value": "Roseanne"
+        },
+        {
+          "value": "Ahmed"
+        },
+        {
+          "value": "Tony"
+        },
+        {
+          "value": "Jon"
+        }
+      ],
+      "includes": 
+      [
+        "(Oscar)[firstName]",
+        "(Danielle)[firstName]",
+        "My name is (Sophie)[firstName]",
+        "My name is (Sarah)[firstName]",
+        "My name is (Cameron)[firstName]",
+        "My name is (Steven)[firstName]",
+        "My name is (Jessica)[firstName]",
+        "My name is (Jon)[firstName]",
+        "My name is (Ahmed)[firstName]",
+        "My first name is (Lisa)[firstName]"
+      ]
+    },
+    "lastName": 
+      {
+        "open_set": true,
+        "values": 
+        [
+          {
+            "value": "Dupri"
+          },
+          {
+            "value": "Thompson"
+          },
+          {
+            "value": "Snow"
+          },
+          {
+            "value": "Montana"
+          },
+          {
+            "value": "Bond"
+          },
+          {
+            "value": "Patel"
+          },
+          {
+            "value": "Holden"
+          }
+        ],
+        "includes": 
+        [
+          "This is (James)[firstName] (Holden)[lastName]",
+          "I'm (Jon)[firstName] (Snow)[lastName]",
+          "My name is (Ahmed)[firstName] (Snow)[lastName]",
+          "(Jermaine)[firstName] (Dupri)[lastName]",
+          "Hi there, my name is (Bridgette)[firstName] (Patel)[lastName]",
+          "Hi there, I'm (Ahmed)[firstName] (Montana)[lastName]",
+          "The name is (Holden)[lastName], (James)[firstName], (Holden)[lastName]",
+          "(Bond)[lastName], (James)[firstName], (Bond)[lastName]"
+        ]
+    },
+    "options": {
+      "open_set": false,
+      "values": [
+        {
+          "value": "option a",
+          "synonyms": ["a", "1"]
+        },
+        {
+          "value": "option b",
+          "synonyms": ["b", "2"]
+        },
+        {
+          "value": "option c",
+          "synonyms": ["c", "3"]
+        },
+        {
+          "value": "option d",
+          "synonyms": ["d", "4"]
+        },
+        {
+          "value": "option e",
+          "synonyms": ["e", "5"]
+        }
+      ]
+    },
     "rating": 
     {
       "open_set": false,

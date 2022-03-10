@@ -13,9 +13,7 @@
       {
         "first":
       [
-        { "text": "Hi there " },
-        { "id": "name", "type": "dynamic" },
-        { "text": "! Can you hear me? " }
+        { "text": "Hi there and welcome to the ABC Airlines automated call center. So that I can better assist you, can you please provide me with your first and last name?" }
       ],
       "repeat":
       [
