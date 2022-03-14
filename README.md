@@ -1,33 +1,4 @@
-# How to load and the demo app
+# Dasha + Answers
 
-This is the most basic of all demo apps. It is designed for you to open up and build your own app on top of it. Enjoy. 
+https://user-images.githubusercontent.com/72618502/158233017-f9a2c2af-4e8c-499e-ba6e-5d1fbe5e0110.mp4
 
-Please join us in our [Developer Community](https://community.dasha.ai).
-
-1. Clone the repo and install the dependencies:
-
-```sh
-git clone https://github.com/dasha-samples/blank-slate-app
-cd blank-slate-app
-npm install
-```
-
-2. Create or log into your account using the Dasha CLI tool:
-
-```sh
-npx dasha account login
-```
-
-3. To start a text chat, run:
-
-```sh
-npm start chat
-```
-
-4. To receive a phone call from Dasha, run:
-
-```sh
-npm start <your phone number>
-```
-
-The phone number should be in the international format without the `+` (e.g. `12223334455`)
