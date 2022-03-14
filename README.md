@@ -10,7 +10,7 @@ This app was created using the Dasha [blank-slate-app](https://github.com/dasha-
 1. Clone the repo and install the dependencies:
 
 ```sh
-git clone https://github.com/apav-dev/abc-airlines-call-center
+git clone https://github.com/YextSolutions/abc-airlines-call-center
 cd abc-airlines-call-center
 npm install
 ```
