@@ -1,0 +1,12 @@
+{
+  "$id": "3131343553381951760",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "After you\u0027ve picked your next dream destination, visit abc airlines dot comm slash vacations or call us direct at 1 800 999 9999.",
+    "name": "How do I make a reservation?",
+    "question": "How do I make a reservation?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

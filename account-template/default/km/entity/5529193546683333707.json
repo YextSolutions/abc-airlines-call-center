@@ -1,0 +1,12 @@
+{
+  "$id": "5529193546683333707",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "You can use your ABC miles to upgrade to First Class when you purchase a qualifying air and hotel package from ABC Vacations.",
+    "name": "How do I use miles to upgrade to first class?",
+    "question": "How do I use miles to upgrade to first class?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

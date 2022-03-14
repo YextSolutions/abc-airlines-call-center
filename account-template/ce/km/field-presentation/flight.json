@@ -1,0 +1,62 @@
+{
+  "$id": "ce_flight",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "ce_flight",
+  "displayName": "Flight",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "entityId",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "c_from",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "c_to",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "c_price",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "c_departureDate",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "c_departureTime",
+          "visibleOnAdd": true
+        }
+      ]
+    },
+    {
+      "displayName": "Other",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Internal Use Only",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "folder"
+        },
+        {
+          "id": "labels"
+        }
+      ]
+    }
+  ]
+}

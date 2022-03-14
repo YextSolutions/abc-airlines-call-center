@@ -1,0 +1,14 @@
+{
+  "$id": "4519106190467202994",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "With no change fees, you have the flexibility to change the date, time or location of your trip prior to departure without a fee. Sometimes, your new flight may cost more than your original flight. In this case you would need to pay the difference in price.",
+    "c_followUpQuestion": "Would you like to change an existing reservation?",
+    "c_followUpVertical": "FLIGHTS",
+    "name": "Can I change my flight?",
+    "question": "Can I change my flight?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

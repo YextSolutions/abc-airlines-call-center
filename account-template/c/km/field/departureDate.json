@@ -1,0 +1,12 @@
+{
+  "$id": "c_departureDate",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "description": "Flight departure date and time.",
+  "displayName": "Departure Date",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "dateType": {}
+  },
+  "typeId": "date"
+}

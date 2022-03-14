@@ -1,0 +1,12 @@
+{
+  "$id": "8771296388558914402",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Some of our more specialized packages require customization, and need to be handled by one of our vacation specialists. In addition, our vacation specialists are able to submit a request for special services like ADA accessible rooms.",
+    "name": "Why aren\u0027t all destinations and packages available to purchase online?",
+    "question": "Why aren\u0027t all destinations and packages available to purchase online?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

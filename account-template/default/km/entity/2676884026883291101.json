@@ -1,0 +1,12 @@
+{
+  "$id": "2676884026883291101",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "It\u0027s easy to earn miles with ABC Vacations just by providing your ABC miles number. As a ABC Miles Member, you earn bonus miles, in addition to flight miles, on every vacation package.",
+    "name": "How can I earn miles?",
+    "question": "How can I earn miles?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

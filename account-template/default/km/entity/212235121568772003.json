@@ -1,0 +1,12 @@
+{
+  "$id": "212235121568772003",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Miles Members earn toward Alpha status on every vacation package. With Alpha Status, you can take advantage of an exclusive offer designed just for Alpha Members.",
+    "name": "Can I earn Alpha status with ABC Vacations?",
+    "question": "Can I earn Alpha status with ABC Vacations?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

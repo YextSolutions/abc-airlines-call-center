@@ -1,0 +1,12 @@
+{
+  "$id": "3861566516660076162",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Our travel protection plan protects you and your travel investment before and during your vacation. You can cancel your trip up to the moment of your scheduled departure for any reason, and have your travel investment protected. Medical and emergency assistance, reimbursements for travel and baggage delay and more are also included during travel.",
+    "name": "Why should I purchase the travel protection plan?",
+    "question": "Why should I purchase the travel protection plan?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

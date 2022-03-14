@@ -1,0 +1,22 @@
+{
+  "$id": "c_followUpVertical",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Follow-Up Vertical",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "optionType": {
+      "option": [
+        {
+          "displayName": "flights",
+          "textValue": "FLIGHTS"
+        },
+        {
+          "displayName": "faqs",
+          "textValue": "FAQS"
+        }
+      ]
+    }
+  },
+  "typeId": "option"
+}

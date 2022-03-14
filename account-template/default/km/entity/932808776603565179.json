@@ -1,0 +1,12 @@
+{
+  "$id": "932808776603565179",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "You can modify your ABC miles number, passport infromation, and emergency contact information. To modify a reservation, go to my trips on abc airlines dot com.",
+    "name": "How do I modify a reservation?",
+    "question": "How do I modify a reservation?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

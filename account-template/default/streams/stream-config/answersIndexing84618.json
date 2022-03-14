@@ -1,0 +1,27 @@
+{
+  "$id": "answersIndexing84618",
+  "$schema": "https://schema.yext.com/config/streams/stream-config/v1",
+  "source": "knowledgeGraph",
+  "destination": "answers",
+  "fields": [
+    "uid",
+    "id",
+    "timezone",
+    "meta",
+    "savedFilters",
+    "name",
+    "c_from",
+    "c_to",
+    "c_departureDate"
+  ],
+  "filter": {
+    "entityTypes": [
+      "ce_flight"
+    ]
+  },
+  "localization": {
+    "locales": [
+      "en"
+    ]
+  }
+}

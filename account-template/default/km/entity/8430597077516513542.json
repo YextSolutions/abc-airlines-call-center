@@ -1,0 +1,12 @@
+{
+  "$id": "8430597077516513542",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Yes. Exclusively with ABC Vacations, ABC Miles Members can use their miles toward their getaway, while still earning miles along the way. Miles can be used To purchase flight and hotel packages, o book packages to any of our 300+ destinations, and with no minimum or maximum number of miles, you can choose miles as the form of payment and enter the amount of miles you would like to use.",
+    "name": "Can I use my miles to pay for my vacation?",
+    "question": "Can I use my miles to pay for my vacation?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

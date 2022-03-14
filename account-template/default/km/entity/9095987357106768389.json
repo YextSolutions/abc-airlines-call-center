@@ -1,0 +1,12 @@
+{
+  "$id": "9095987357106768389",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "To cancel a reservation, go to My Trips at abc airlines dot comm. Enter the lead traveler\u0027s first and last name and booking number or log in to your ABC miles account. Click the Cancel button at the bottom of your itinerary. Cancel fees may apply, and are outlined in the cancel fee section of your itinerary.",
+    "name": "How do I cancel a vacation?",
+    "question": "How do I cancel a vacation?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

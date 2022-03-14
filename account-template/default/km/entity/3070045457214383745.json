@@ -1,0 +1,12 @@
+{
+  "$id": "3070045457214383745",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Our Traditional Group sales and service specialists can customize travel planning for groups of 20 or more people to make the process seamless from start to finish. There are many advantages to arranging your Group Travel through our trained Group Reservations staff, and it\u0027s possible to get your air, hotel and tour options planned in just one phone call.",
+    "name": "How do I make a Group Travel reservation?",
+    "question": "How do I make a Group Travel reservation?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

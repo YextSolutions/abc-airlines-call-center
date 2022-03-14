@@ -1,0 +1,12 @@
+{
+  "$id": "1859559978641612929",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "We accept credit cards as form of online payment. You can use either American Express, Visa, MasterCard, Discover, Diners Club or Carte Blanche. Other accepted forms of payment are ABC Vacations Gift Cards, ABC Gift Cards or ABC Vacations\\-issued Travel Certificates.",
+    "name": "What forms of payment do you accept?",
+    "question": "What forms of payment do you accept?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

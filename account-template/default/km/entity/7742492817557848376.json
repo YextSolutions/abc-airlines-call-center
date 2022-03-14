@@ -1,0 +1,15 @@
+{
+  "$id": "7742492817557848376",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_departureDate": "2022-03-15",
+    "c_departureTime": "7 PM",
+    "c_from": "New York",
+    "c_price": "299",
+    "c_to": "Chicago",
+    "name": "3745"
+  },
+  "entityType": "ce_flight",
+  "labels": []
+}

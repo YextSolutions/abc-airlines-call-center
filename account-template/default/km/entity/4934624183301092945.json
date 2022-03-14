@@ -1,0 +1,12 @@
+{
+  "$id": "4934624183301092945",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "The ABC Vacations Travel Advisory Waiver Policy ensures that you can purchase your vacation with confidence. If your travel dates and destinations are impacted by a ABC Air Lines issued event waiver, ABC Vacations allows you to cancel your existing vacation, and receive an ABC Vacations travel voucher for the original package value.",
+    "name": "What is your COVID cancellation policy?",
+    "question": "What is your COVID cancellation policy?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

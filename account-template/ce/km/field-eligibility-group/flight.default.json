@@ -1,0 +1,14 @@
+{
+  "$id": "ce_flight.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Flight-default",
+  "entityType": "ce_flight",
+  "fields": [
+    "c_departureDate",
+    "c_departureTime",
+    "c_from",
+    "c_price",
+    "c_to"
+  ],
+  "required": []
+}
