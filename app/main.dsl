@@ -30,16 +30,9 @@ type Flight =
 }
 ;
 
-type AnswersResponse =
-{
-    entityType: string;
-    faq: Faq;
-    flight: Flight;
-}
-;
-
 // declare external functions here
-external function verticalSearch(verticalKey: string, query: string): AnswersResponse;
+external function findFaq(verticalKey: string, query: string): Faq;
+external function findFlights(from: string, to: string, date: string): Flight[];
 
 // lines 28-42 start node
 start node root
@@ -70,19 +63,18 @@ digression greeting
         #sayText("Nice to meet you " + $firstName + ", how may I assist you today?");
         wait *;
     }
+    transitions
+    {
+        handle_q: goto handle_faq on #getSentenceType() == "question";
+    }
 }
 
-digression handle_faq
+node handle_faq
 {
-    conditions
-    {
-        on #getSentenceType() == "question";
-    }
     do
     {
         var userQuestion = #getMessageText();
-        var answersResponse: AnswersResponse = external verticalSearch("faqs", userQuestion);
-        var faq = answersResponse.faq;
+        var faq: Faq = external findFaq("faqs", userQuestion);
         
         #sayText(faq.answer);
         
@@ -96,14 +88,29 @@ digression handle_faq
         }
         else
         {
-            #sayText("Is there anything else I can help you with today?");
+            goto other_qs;
         }
         
         wait *;
     }
     transitions
     {
-        book_flight: goto book_flight on $followUpVertical == "flights";
+        book_flight: goto book_flight on $followUpVertical == "flights" and #messageHasIntent("yes");
+        other_qs: goto other_qs;
+    }
+}
+
+node other_qs
+{
+    do
+    {
+        #sayText("Is there anything else I can help you with today?");
+        wait *;
+    }
+    transitions
+    {
+        handle_q: goto handle_faq on #getSentenceType() == "question";
+        no_more_qs: goto bye on #messageHasIntent("no");
     }
 }
 
@@ -111,11 +118,61 @@ node book_flight
 {
     do
     {
-        var flights = external verticalSearch("flights", "flights");
-        #sayText("It looks like we have flights on Tuesday, March 15. Option A is 7 pm for $299 and Option B is 10 pm for $249.");
-        var index: number = blockcall select_flight_option();
-        
+        #sayText("It looks like you are schdeduled to fly from New York to Chicago on March 13 at 7 pm. What is the new date you would like to fly?");
         wait *;
+    }
+    transitions
+    {
+        select_flight_date: goto select_flight_date on #messageHasData("date");
+    }
+}
+
+node select_flight_date
+{
+    do
+    {
+        var new_date = #messageGetData("date")[0]?.value??"";
+        
+        // passing static values but from and to cities could be extracted from the user's dictation
+        var flights: Flight[] = external findFlights("new york", "chicago", new_date);
+        
+        if(flights.length() != 0)
+        {
+            var num_flights = flights.length().toString();
+            #sayText("It looks like we have " +  num_flights + " flights on " + new_date);
+            
+            var option_a = flights.shift();
+            if(option_a is not null)
+            {
+                #sayText("Option A is at " + option_a.departureTime + " and costs " + option_a.price + " dollars");
+            }
+            
+            var option_b = flights.shift();
+            if(option_b is not null)
+            {
+                #sayText("Option B is at " + option_b.departureTime + " and costs " + option_b.price + " dollars");
+            }
+            
+            var option_c = flights.shift();
+            if(option_c is not null)
+            {
+                #sayText("Option C is at " + option_c.departureTime + " and costs " + option_c.price );
+            }
+            
+            var index: number = blockcall select_flight_option();
+            
+            #sayText("Ok great I will get that booked for you.");
+        }
+        else
+        {
+            #sayText("Sorry! It looks like we don't have any flights on that day.");
+        }
+        
+        goto other_qs;
+    }
+    transitions
+    {
+        other_qs: goto other_qs;
     }
 }
 
@@ -164,35 +221,11 @@ block select_flight_option(): number
     }
 }
 
-node yes
+node bye
 {
     do
     {
-        // var result = external function1("test");    //call your external function
-        #say("yes"); //call on phrase "question_1" from the phrasemap
+        #sayText("It was my pleasure to help. Have a nice day! Bye!");
         exit;
-    }
-}
-
-node no
-{
-    do
-    {
-        #say("no");
-        exit;
-    }
-}
-
-digression how_are_you
-{
-    conditions
-    {
-        on #messageHasIntent("how_are_you");
-    }
-    do
-    {
-        #sayText("I'm well, thank you!", repeatMode: "ignore");
-        #repeat(); // let the app know to repeat the phrase in the node from which the digression was called, when go back to the node
-        return; // go back to the node from which we got distracted into the digression
     }
 }

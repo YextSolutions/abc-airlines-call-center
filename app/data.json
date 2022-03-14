@@ -142,6 +142,26 @@
           "(Bond)[lastName], (James)[firstName], (Bond)[lastName]"
         ]
     },
+    "date": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "march 14"
+        },
+        {
+          "value": "april 6"
+        },
+        {
+          "value": "may 1"
+        },
+        {
+          "value": "june 24"
+        },
+        {
+          "value": "july 30"
+        }
+      ]
+    },
     "options": {
       "open_set": false,
       "values": [

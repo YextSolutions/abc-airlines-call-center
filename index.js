@@ -35,57 +35,62 @@ async function main()
 
   app.ttsDispatcher = () => "dasha";
 
-  app.setExternal("verticalSearch", async (args)=> {
+  app.setExternal("findFaq", async (args)=> {
     const query = args.query;
-    const verticalKey = args.verticalKey;
-
-    const searchRequest = {
-      query,
-      verticalKey,
-      limit: verticalKey === "faqs" ? 1 : 5
-    }
-
-    if(verticalKey === "flights"){
-      searchRequest.staticFilters = { fieldId: "c_departureDate", matcher: Matcher.GreaterThan, value: '2022-04-04T05:56'}
-    }
     
-    const searchResults = await answers.verticalSearch(searchRequest);
-    console.log("search results length: " + searchResults.verticalResults.results.length);
+    const searchResults = await answers.verticalSearch({ query, verticalKey: "faqs", limit: 1});
 
-    if(verticalKey === "faqs"){
-      if(searchResults.verticalResults.results[0]){
-        const faq = searchResults.verticalResults.results[0].rawData;
-        return {
-          faq: {
-            question: faq.name,
-            answer: faq.answer,
-            followUpQuestion: faq.c_followUpQuestion,
-            followUpVertical: faq.c_followUpVertical
-          }
-        }
-      } else {
-        return {
-          faq: {
-            answer: "Sorry! I could not find the answer to you question."
-          }
-        }
+    if(searchResults.verticalResults.results[0]){
+      const faq = searchResults.verticalResults.results[0].rawData;
+    return {
+        question: faq.name,
+        answer: faq.answer,
+        followUpQuestion: faq.c_followUpQuestion,
+        followUpVertical: faq.c_followUpVertical
       }
     } else {
-      const flights = searchResults.verticalResults.results.map(result => {
-        const flight = result.rawData;
-        return {
-          flight: {
-            departureDate: flight.c_departureDate,
-            departureTime: flight.c_departureTime,
-            from: flight.c_from,
-            to: flight.c_to,
-            price: flight.c_price 
-          }
+      return {
+        faq: {
+          answer: "Sorry! I could not find the answer to you question."
         }
-      })
-      return flights;
+      }
     }
   });
+
+  app.setExternal("findFlights", async (args) => {
+    // from and to cities could be used as filter values
+    const from = args.from;
+    const to = args.to;
+    let date = args.date;
+
+    try {
+      date = formatDate(date);
+    } catch {
+      return [];
+    }
+
+    const searchRequest = { 
+      query: 'flights', 
+      verticalKey: "flights", 
+      limit: 3,
+      staticFilters: { fieldId: 'c_departureDate', matcher: Matcher.Equals, value: date },
+    }
+
+    const searchResults = await answers.verticalSearch(searchRequest);
+
+    const flights =  searchResults.verticalResults.results.map(result => {
+      const flight = result.rawData;
+      return {
+        departureDate: flight.c_departureDate,
+        departureTime: flight.c_departureTime,
+        from: flight.c_from,
+        to: flight.c_to,
+        price: flight.c_price 
+      }
+    })
+
+    return flights;
+  })
 
   await app.start();
 
@@ -121,3 +126,42 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+function formatDate(spokenDate){
+  const words = spokenDate.split(' ');
+  if(words.length === 2){
+    const month = words[0];
+    const date = words[1];
+
+    switch (month) {
+      case 'january':
+        return `2022-01-${date.length === 1 ? '0' + date : date}`;
+      case 'february':
+        return `2022-02-${date.length === 1 ? '0' + date : date}`;
+      case 'march':
+        return `2022-03-${date.length === 1 ? '0' + date : date}`;
+      case 'april':
+        return `2022-04-${date.length === 1 ? '0' + date : date}`
+      case 'may':
+        return `2022-05-${date.length === 1 ? '0' + date : date}`
+      case 'june':
+        return `2022-06-${date.length === 1 ? '0' + date : date}`
+      case 'july':
+        return `2022-07-${date.length === 1 ? '0' + date : date}`
+      case 'august':
+        return `2022-08-${date.length === 1 ? '0' + date : date}`
+      case 'september':
+        return `2022-09-${date.length === 1 ? '0' + date : date}`
+      case 'october':
+        return `2022-10-${date.length === 1 ? '0' + date : date}`
+      case 'november':
+        return `2022-11-${date.length === 1 ? '0' + date : date}`
+      case 'december':
+        return `2022-12-${date.length === 1 ? '0' + date : date}`
+      default:
+        throw 'Invalid date';
+    }
+  } else {
+    throw 'Invalid date';
+  }
+} 
